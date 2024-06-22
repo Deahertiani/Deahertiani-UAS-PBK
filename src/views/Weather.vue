@@ -10,7 +10,7 @@
               <q-icon name="fas fa-map-marker-alt" color="white" />
             </template>
             <template v-slot:append>
-              <q-icon name="fas fa-times" color="white"@click="location = ''" class="cursor-pointer" />
+              <q-icon name="fas fa-times" color="white" @click="location = ''" class="cursor-pointer" />
             </template>
           </q-input>
           <q-btn class="glossy" unelevated rounded color="primary" label="Get Weather" @click="searchWeather" />
@@ -22,8 +22,8 @@
       <q-card class="weather-card" v-for="(weather, index) in weathers" :key="weather.id">
         <q-card-section>
           <div class="weather-icon">
-              <q-icon :name="getWeatherIcon(weather.weather[0].main)" />
-            </div>
+            <q-icon :name="getWeatherIcon(weather.weather[0].main)" />
+          </div>
           <div class="text-h6">
             <q-icon name="fas fa-map-marker-alt" /> {{ weather.name }}, {{ weather.sys.country }}
           </div>
@@ -111,8 +111,6 @@ const getWeatherIcon = (weatherMain) => {
       return 'fas fa-cloud';
   }
 };
-
-
 </script>
 
 <style scoped>
@@ -123,7 +121,7 @@ const getWeatherIcon = (weatherMain) => {
   text-align: center;
 }
 
-h3{
+h3 {
   color: white;
   text-shadow: 2px 2px #0b07f5;
 }
@@ -138,28 +136,26 @@ h3{
 .input-card {
   max-width: 400px;
   width: 100%;
-  background-color: rgb(255 255 255 / 30%);
+  background-color: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(10px);
   border-radius: 20px;
   color: white;
 }
 
 .weather-display {
-  max-width: 2500px;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
   width: 100%;
   margin-top: 20px;
-
 }
 
 .weather-card {
-  width: 30%;
-  background-color: rgb(255 255 255 / 30%);
+  width: 400px;
+  background-color: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(10px);
   border-radius: 20px;
-
 }
 
 .weather-info {
@@ -179,23 +175,23 @@ h3{
   color: rgb(93, 93, 249);
 }
 
-.weather-icon{
+.weather-icon {
   font-size: 70px;
   color: yellow;
 }
 
-.temperature{
+.temperature {
   font-size: 30px;
-  font-weight: bold ;
+  font-weight: bold;
   color: red;
   text-align: center;
 }
 
-.text-h6 i{
+.text-h6 i {
   color: blue;
 }
 
-.timestamp i{
+.timestamp i {
   color: aliceblue;
 }
 </style>
